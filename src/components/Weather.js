@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Container, Col, Row, Button, Form, Stack, Table, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import {Container, Col, Row, Button, Form, Stack, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import Forecast from "../components/Forecast";
 import TodayForecast from "../components/TodayForecast";
 
@@ -14,10 +14,9 @@ let background = {
 const WeatherComponent = (props) => {
     const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({lat:null,long:null});
-    const [forecasts, setForecasts] = useState();
+    const [forecasts, setForecasts] = useState(null);
     const [weatherImage, setWeatherImage] = useState(background["rain"]);
     const [isLoading, setLoading] = useState(false);
-    const [isFahrenheit, setIsFahrenheit] = useState(true);
     const [tempUnit, setTempUnit] = useState('f');
 
     useEffect(() => {
