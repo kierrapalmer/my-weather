@@ -4,7 +4,7 @@ import {convertFahToCel, abbreviateDay} from "../inc/Utilities";
 const Forecast = ({data, tempUnit}) => {
     var forecastDate = new Date(data.startTime);
     var todaysDate = new Date();
-    var isTodaysForecast = forecastDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0);
+    var isTodaysForecast = forecastDate.setHours(0,0,0,0) === todaysDate.setHours(0,0,0,0);
 
     if(!data.name.includes('Night') && !isTodaysForecast){
         var temp = tempUnit === 'c' ? convertFahToCel(data.temperature) : data.temperature;
